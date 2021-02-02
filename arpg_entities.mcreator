@@ -1,0 +1,158 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "SCOMobs",
+      "type": "tab",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sco_mobs"
+    },
+    {
+      "name": "TestGui",
+      "type": "gui",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "test_gui"
+    },
+    {
+      "name": "Frenzyboar",
+      "type": "mob",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "frenzyboar"
+    },
+    {
+      "name": "KillFrenzyBoar",
+      "type": "achievement",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "kill_frenzy_boar"
+    },
+    {
+      "name": "KillFrenzyB",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "kill_frenzy_b",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TestKeybindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "test_keybind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TestKeybind",
+      "type": "keybind",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "test_keybind"
+    },
+    {
+      "name": "SCOPainting1",
+      "type": "painting",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sco_painting_1"
+    },
+    {
+      "name": "BoarOverlay",
+      "type": "overlay",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "boar_overlay"
+    },
+    {
+      "name": "Klein",
+      "type": "mob",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "klein"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "advancements.kill_frenzy_boar.descr": "Killed a Frenzy Boar",
+      "itemGroup.tabsco_mobs": "SCO Mobs",
+      "advancements.kill_frenzy_boar.title": "Kill Frenzy Boar",
+      "key.mcreator.test_keybind": "Test Keybind",
+      "item.arpg_entities.frenzyboar_spawn_egg": "Frenzyboar Spawn Egg",
+      "entity.arpg_entities.frenzyboar": "Frenzyboar",
+      "entity.arpg_entities.klein": "Klein",
+      "item.arpg_entities.klein_spawn_egg": "Klein Spawn Egg"
+    }
+  },
+  "workspaceSettings": {
+    "modid": "arpg_entities",
+    "modName": "ARPG Entities",
+    "version": "1.0.0",
+    "author": "user, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.15.2",
+    "modElementsPackage": "net.mcreator.arpgentities",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202000547520
+}

@@ -1,0 +1,46 @@
+{
+  "_fv": 13,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "This is a Test Overlay",
+          "color": {
+            "value": -16724788,
+            "falpha": 0.0
+          },
+          "name": "This is a Test Overlay",
+          "x": 7,
+          "y": 5
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "You are now playing on Sword Craft Online",
+          "color": {
+            "value": -13369396,
+            "falpha": 0.0
+          },
+          "name": "You are now playing on Sword Craft Online",
+          "x": 218,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "am2bars.png",
+          "use1Xscale": true,
+          "name": "am2bars.png",
+          "x": 56,
+          "y": 184
+        }
+      }
+    ],
+    "baseTexture": ""
+  }
+}

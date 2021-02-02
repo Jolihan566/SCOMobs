@@ -1,0 +1,81 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 200,
+    "height": 200,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "This is a Test",
+          "color": {
+            "value": -16724788,
+            "falpha": 0.0
+          },
+          "name": "This is a Test",
+          "x": 174,
+          "y": 37
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Okay",
+          "width": 45,
+          "height": 20,
+          "name": "Okay",
+          "x": 248,
+          "y": 98
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Name:",
+          "width": 120,
+          "height": 20,
+          "name": "name",
+          "x": 175,
+          "y": 66
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "Items.DIAMOND"
+          },
+          "color": {
+            "value": -16724788,
+            "falpha": 0.0
+          },
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": false,
+          "name": "Slot #1",
+          "x": 138,
+          "y": 92
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Name:",
+          "color": {
+            "value": -16724788,
+            "falpha": 0.0
+          },
+          "name": "Name:",
+          "x": 138,
+          "y": 69
+        }
+      }
+    ]
+  }
+}

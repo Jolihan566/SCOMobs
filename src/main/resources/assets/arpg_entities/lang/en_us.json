@@ -1,0 +1,10 @@
+{
+  "advancements.kill_frenzy_boar.descr": "Killed a Frenzy Boar",
+  "itemGroup.tabsco_mobs": "SCO Mobs",
+  "advancements.kill_frenzy_boar.title": "Kill Frenzy Boar",
+  "key.mcreator.test_keybind": "Test Keybind",
+  "item.arpg_entities.frenzyboar_spawn_egg": "Frenzyboar Spawn Egg",
+  "entity.arpg_entities.frenzyboar": "Frenzyboar",
+  "entity.arpg_entities.klein": "Klein",
+  "item.arpg_entities.klein_spawn_egg": "Klein Spawn Egg"
+}
