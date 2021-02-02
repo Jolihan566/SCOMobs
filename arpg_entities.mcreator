@@ -122,6 +122,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "klein"
+    },
+    {
+      "name": "Kleinsword",
+      "type": "item",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "kleinsword"
     }
   ],
   "variable_elements": [],
@@ -132,6 +141,7 @@
       "itemGroup.tabsco_mobs": "SCO Mobs",
       "advancements.kill_frenzy_boar.title": "Kill Frenzy Boar",
       "key.mcreator.test_keybind": "Test Keybind",
+      "item.arpg_entities.kleinsword": "§4Klein\u0027s Sword",
       "item.arpg_entities.frenzyboar_spawn_egg": "Frenzyboar Spawn Egg",
       "entity.arpg_entities.frenzyboar": "Frenzyboar",
       "entity.arpg_entities.klein": "Klein",

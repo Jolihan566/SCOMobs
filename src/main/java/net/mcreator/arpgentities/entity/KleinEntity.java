@@ -21,10 +21,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.OpenDoorGoal;
+import net.minecraft.entity.ai.goal.MoveTowardsVillageGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
@@ -44,6 +48,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 
 import net.mcreator.arpgentities.itemgroup.SCOMobsItemGroup;
+import net.mcreator.arpgentities.item.KleinswordItem;
 import net.mcreator.arpgentities.ArpgEntitiesModElements;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -60,7 +65,7 @@ public class KleinEntity extends ArpgEntitiesModElements.ModElement {
 	@Override
 	public void initElements() {
 		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.8f)).build("klein")
+				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(0.6f, 1.8f)).build("klein")
 						.setRegistryName("klein");
 		elements.entities.add(() -> entity);
 		elements.items.add(
@@ -102,6 +107,7 @@ public class KleinEntity extends ArpgEntitiesModElements.ModElement {
 			setNoAI(false);
 			setCustomName(new StringTextComponent("§4Klein"));
 			setCustomNameVisible(true);
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(KleinswordItem.block, (int) (1)));
 		}
 
 		@Override
@@ -116,12 +122,20 @@ public class KleinEntity extends ArpgEntitiesModElements.ModElement {
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 1));
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
-			this.goalSelector.addGoal(5, new SwimGoal(this));
+			this.goalSelector.addGoal(5, new OpenDoorGoal(this, true));
+			this.goalSelector.addGoal(6, new MoveTowardsVillageGoal(this, 0.5));
+			this.goalSelector.addGoal(7, new OpenDoorGoal(this, false));
+			this.goalSelector.addGoal(8, new SwimGoal(this));
 		}
 
 		@Override
 		public CreatureAttribute getCreatureAttribute() {
 			return CreatureAttribute.UNDEFINED;
+		}
+
+		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
+			super.dropSpecialItems(source, looting, recentlyHitIn);
+			this.entityDropItem(new ItemStack(KleinswordItem.block, (int) (1)));
 		}
 
 		@Override
@@ -132,6 +146,15 @@ public class KleinEntity extends ArpgEntitiesModElements.ModElement {
 		@Override
 		public net.minecraft.util.SoundEvent getDeathSound() {
 			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+		}
+
+		@Override
+		public boolean attackEntityFrom(DamageSource source, float amount) {
+			if (source == DamageSource.FALL)
+				return false;
+			if (source == DamageSource.DROWN)
+				return false;
+			return super.attackEntityFrom(source, amount);
 		}
 
 		@Override
